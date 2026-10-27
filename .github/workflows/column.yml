@@ -1,0 +1,29 @@
+name: "juniper"
+run-name: "Fawn"
+"on":
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+permissions:
+  pages: write
+  contents: read
+  id-token: write
+jobs:
+  Snapdragon:
+    runs-on: ubuntu-24.04
+    environment:
+      name: "github-pages"
+      url: ${{ steps.canyon.outputs.page_url }}
+    steps:
+      - name: "Lagoon"
+        uses: actions/checkout@v5
+      - name: "zenith"
+        uses: actions/configure-pages@v6
+      - name: "Sedge"
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: ${{ github.workspace }}
+      - name: "HUMMINGBIRD"
+        id: canyon
+        uses: actions/deploy-pages@v5
